@@ -6,6 +6,7 @@ public class Calculator {
     private char op;
 
     public Calculator() {
+
     }
     public Calculator(int num1, int num2) {
         this.num1 = num1;
@@ -16,6 +17,28 @@ public class Calculator {
         this.num1 = num1;
         this.num2 = num2;
         this.op = op;
+    }
+
+    public int calculate(){
+        int result = 0;
+        //
+        switch (op){
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            default:
+                throw new IllegalArgumentException();
+        }
+        return result;
     }
 
     public int getNum1() {

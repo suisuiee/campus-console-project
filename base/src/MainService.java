@@ -1,25 +1,31 @@
-import controller.ApplicationController;
+import controller.CalculatorController;
+import controller.GugudanController;
 import router.UserInputRouter;
 
 
 public class MainService {
 
     private UserInputRouter uir = new UserInputRouter();
-    private ApplicationController ac = new ApplicationController();
-    // private MainView view = new MainView(); // TODO : 이게 여기가 맞나? 재검토 필요
+    private CalculatorController cc = new CalculatorController();
 
     public void start() {
         while (true) {
             try {
+                // (1)구구단   (2)계산기  (3)별찍기
                 int programType = uir.getUserInput();
+
                 if (programType == 1) {
-                    ac.doGugudan();
+                    // 사용자 입력값을 기준으로
+                    // 컨트롤러를 실행시켜 주세요
                     break;
                 } else if (programType == 2) {
-                    ac.doCalculator();
+                    // 사용자 입력값을 기준으로
+                    // 컨트롤러를 실행시켜 주세요
+                    cc.run();
                     break;
                 } else if (programType == 3) {
-                    // ac.doStar();
+                    // 사용자 입력값을 기준으로
+                    // 컨트롤러를 실행시켜 주세요
                     break;
                 }
             } catch (IllegalArgumentException e) {
@@ -29,6 +35,8 @@ public class MainService {
             }
         }
     }
+}
+
 class Main {
     public static void main(String[] args) {
 

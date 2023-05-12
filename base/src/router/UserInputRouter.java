@@ -25,7 +25,7 @@ public class UserInputRouter {
         } else if (userInput.equals("2")) {
             return 2; // TODO : ENUM으로 만들어보기!
         } else if(userInput.equals("3")) {
-            return 3;
+            return 3; // TODO : ENUM으로 만들어보기!
         }
         throw new InvalidUserInput("잘못된 사용자 입력입니다.");
     }
