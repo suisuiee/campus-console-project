@@ -1,25 +1,29 @@
 package homework;
 import controller.gugudanControl;
+import controller.StarMakerController;
 import controller.calculatorController;
 import view.gugudanView;
+import view.StarMakerView;
 import view.calculatorView;
-import model.gugudanModel;
+import model.StarMakerModel;
 import model.calculatorModel;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 
 
-public class main {
+public class mainService {
 
 	public static void main(String[] args) throws Exception {
+		mainService start = new mainService();
+		start.startMenu();
+	}
+	public void startMenu() throws Exception{
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input;
-		boolean systemState = true;
-		while(systemState) {
+		while(true) {
 			System.out.println("구구단 계산기 입니다 구구단은 g 계산기는 c 종료는q입니다 ");
 			input = br.readLine();
 			if(input.equals("q")) {
@@ -42,11 +46,17 @@ public class main {
 				calccontrol.calculate();
 				break;
 			}
+			if(input.equals("s")) {
+		System.out.println("별찍기 서비스로 이동합니다...");
+				StarMakerModel starmodel = new StarMakerModel();
+				StarMakerView starview = new StarMakerView();
+				StarMakerController starcontroller = new StarMakerController();
+				starview.starMenu();
+			}
 			else {
-				System.out.println("잘못된 입력입니다");
+				System.out.println("잘못된 입력입니다");				
 			}
 		}
 		System.out.println("서비스가 끝났습니다 종료합니다.");
 	}
-
 }
