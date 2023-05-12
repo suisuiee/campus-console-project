@@ -1,17 +1,15 @@
 package controller;
 
-import view.CalculatorView;
+import service.CalculatorService;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class CalculatorController {
-    private CalculatorView view;
+    private CalculatorService cs = new CalculatorService();
 
-    public CalculatorController(CalculatorView view) {
-        this.view = view;
+    // TODO -> 서비스 로직과 컨트롤러 로직을 분리!~
+    public void run() throws IOException {
+        cs.run();
     }
-
 
 }
