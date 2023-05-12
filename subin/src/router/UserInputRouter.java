@@ -17,6 +17,7 @@ public class UserInputRouter {
         System.out.println("*** 숫자를 입력해 주세요 ! ***");
         System.out.println("*  1. 구구단             *");
         System.out.println("*  2. 계산기             *");
+        System.out.println("*  3. 별찍기             *");
         System.out.println("************************");
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -26,6 +27,8 @@ public class UserInputRouter {
             return 1; // TODO : ENUM으로 만들어보기!
         } else if (userInput.equals("2")) {
             return 2; // TODO : ENUM으로 만들어보기!
+        } else if(userInput.equals("3")) {
+            return 3;
         }
         throw new InvalidUserInput("잘못된 사용자 입력입니다.");
 
