@@ -13,6 +13,10 @@ public class CalController {
 	private String exp, op;
 	private int op1, op2;
 
+	public CalController() throws IOException {
+		startCalculator();
+	}
+
 	public void startCalculator() throws IOException {
 		while (true) {
 			try {

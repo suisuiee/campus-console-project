@@ -4,7 +4,6 @@ import java.io.IOException;
 import exception.InputOutOfBoundsException;
 
 public class Calculator {
-
 	String exp;
 	private int op1, op2; // operand1, operand2
 	private String op; // operator
@@ -17,8 +16,8 @@ public class Calculator {
 	}
 
 	public void calculate() throws IOException {
-		try{
-			switch(op) {
+		try {
+			switch (op) {
 			case "+":
 				result = op1 + op2;
 				break;
@@ -29,25 +28,24 @@ public class Calculator {
 				result = op1 * op2;
 				break;
 			case "/":
-				result = (double)op1 / (double)op2;
+				result = (double) op1 / (double) op2;
 				isInfiniteOrNan(result);
 				break;
 			default:
 				System.out.println("유효하지 않은 입력입니다.");
-				}
-			
-			if(!(op.equals("/"))) {
-				System.out.printf("%d %s %d = %d\n", op1, op, op2, (int)result);
-			}else {
-				System.out.printf("%d %s %d = %.2f\n", op1, op, op2, result);
-			}
-			
-			}catch(InputOutOfBoundsException e){ // 0으로 나눴을 때 발생
-				System.out.println("0으로 나눌 수 없습니다.");
-			}catch(NumberFormatException e){
-				System.out.println("유효하지 않은 입력입니다.");
 			}
 
+			if (!(op.equals("/"))) {
+				System.out.printf("%d %s %d = %d\n", op1, op, op2, (int) result);
+			} else {
+				System.out.printf("%d %s %d = %.2f\n", op1, op, op2, result);
+			}
+
+		} catch (InputOutOfBoundsException e) { // 0으로 나눴을 때 발생
+			System.out.println("0으로 나눌 수 없습니다.");
+		} catch (NumberFormatException e) {
+			System.out.println("유효하지 않은 입력입니다.");
+		}
 	}
 
 	public static void isInfiniteOrNan(double result) throws InputOutOfBoundsException {
