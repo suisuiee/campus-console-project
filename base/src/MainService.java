@@ -27,6 +27,9 @@ public class MainService {
                     // 사용자 입력값을 기준으로
                     // 컨트롤러를 실행시켜 주세요
                     break;
+                } else if (programType == 3) {
+                    ac.doStar();
+                    break;
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요");
