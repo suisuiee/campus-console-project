@@ -19,6 +19,9 @@ public class MainService {
                 } else if (programType == 2) {
                     ac.doCalculator();
                     break;
+                } else if (programType == 3) {
+                    ac.doStar();
+                    break;
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요");

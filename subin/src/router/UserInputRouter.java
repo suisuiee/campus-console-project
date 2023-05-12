@@ -2,6 +2,7 @@ package router;
 
 import exception.InvalidUserInput;
 import model.Calculator;
+import model.Star;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,6 +18,7 @@ public class UserInputRouter {
         System.out.println("*** 숫자를 입력해 주세요 ! ***");
         System.out.println("*  1. 구구단             *");
         System.out.println("*  2. 계산기             *");
+        System.out.println("*  3. 별찍기             *");
         System.out.println("************************");
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -26,6 +28,8 @@ public class UserInputRouter {
             return 1; // TODO : ENUM으로 만들어보기!
         } else if (userInput.equals("2")) {
             return 2; // TODO : ENUM으로 만들어보기!
+        } else if (userInput.equals("3")) {
+            return 3;
         }
         throw new InvalidUserInput("잘못된 사용자 입력입니다.");
 
@@ -67,6 +71,38 @@ public class UserInputRouter {
 
 
         return calculator;
+    }
+
+    public Star getStarInput() throws IOException {
+        System.out.println("찍을 별을 골라주세요");
+        System.out.println("1. 그냥 사각형 별");
+        System.out.println("2. 삼각형 ");
+        System.out.println("3. 트리");
+        System.out.println("4. 역트리");
+        System.out.println("5. 마름모");
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+
+        System.out.println("별의 갯수를 정해 주세요");
+        String userInput = br.readLine();
+
+        // 숫자 형식인지 검사
+        if(!isInteger(str) || !isInteger(userInput)){
+            throw new NumberFormatException();
+        }
+
+        if( !( Integer.parseInt(str) >= 1 && Integer.parseInt(str) <=5 )){
+            throw new IllegalArgumentException();
+        }
+
+
+        int style = Integer.parseInt(str);
+        int line = Integer.parseInt(userInput);
+
+        Star star = new Star(line, style);
+
+        return star;
     }
 
     public boolean validNumberRange(int number) {
