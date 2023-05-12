@@ -1,9 +1,9 @@
 package model;
 
-public class TimesTable {
+public class StarMaker {
 	private int num;
 	
-	public TimesTable(int num) {
+	public StarMaker(int num) {
 		this.num = num;
 	}
 
@@ -14,5 +14,4 @@ public class TimesTable {
 	public void setNum(int num) {
 		this.num = num;
 	}
-
 }
