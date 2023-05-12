@@ -1,5 +1,4 @@
 import controller.ApplicationController;
-import exception.InvalidUserInput;
 import router.UserInputRouter;
 
 
@@ -20,25 +19,16 @@ public class MainService {
                     ac.doCalculator();
                     break;
                 } else if (programType == 3) {
-
+                    // ac.doStar();
+                    break;
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요");
-            } catch (InvalidUserInput e) {
-                throw new RuntimeException(e);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
     }
-// TODO: 이걸 지워야 하나?
-//    public void validUserInput(String userInput) throws IllegalArgumentException {
-//        if (!userInput.equals("1") && !userInput.equals("2")) {
-//            throw new IllegalArgumentException("잘못 입력하셨습니다. 다시 입력해 주세요");
-//        }
-//    }
-}
-
 class Main {
     public static void main(String[] args) {
 
