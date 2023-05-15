@@ -1,12 +1,15 @@
 import controller.CalculatorController;
 import controller.GugudanController;
+import controller.StarMakerController;
 import router.UserInputRouter;
 
 
 public class MainService {
 
     private UserInputRouter uir = new UserInputRouter();
+    private GugudanController gc = new GugudanController();
     private CalculatorController cc = new CalculatorController();
+    private StarMakerController sc = new StarMakerController();
 
     public void start() {
         while (true) {
@@ -17,6 +20,7 @@ public class MainService {
                 if (programType == 1) {
                     // 사용자 입력값을 기준으로
                     // 컨트롤러를 실행시켜 주세요
+                    gc.run();
                     break;
                 } else if (programType == 2) {
                     // 사용자 입력값을 기준으로
@@ -26,6 +30,7 @@ public class MainService {
                 } else if (programType == 3) {
                     // 사용자 입력값을 기준으로
                     // 컨트롤러를 실행시켜 주세요
+                    sc.run();
                     break;
                 }
             } catch (IllegalArgumentException e) {
