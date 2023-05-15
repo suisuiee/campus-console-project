@@ -1,45 +1,43 @@
-import controller.CalculatorController;
-import controller.GugudanController;
-import controller.StarMakerController;
+import controller.ApplicationController;
+import exception.InvalidUserInput;
 import router.UserInputRouter;
 
 
 public class MainService {
 
     private UserInputRouter uir = new UserInputRouter();
-    private GugudanController gc = new GugudanController();
-    private CalculatorController cc = new CalculatorController();
-    private StarMakerController sc = new StarMakerController();
+    private ApplicationController ac = new ApplicationController();
+    // private MainView view = new MainView(); // TODO : 이게 여기가 맞나? 재검토 필요
 
     public void start() {
         while (true) {
             try {
-                // (1)구구단   (2)계산기  (3)별찍기
                 int programType = uir.getUserInput();
-
                 if (programType == 1) {
-                    // 사용자 입력값을 기준으로
-                    // 컨트롤러를 실행시켜 주세요
-                    gc.run();
+                    ac.doGugudan();
                     break;
                 } else if (programType == 2) {
-                    // 사용자 입력값을 기준으로
-                    // 컨트롤러를 실행시켜 주세요
-                    cc.run();
+                    ac.doCalculator();
                     break;
                 } else if (programType == 3) {
-                    // 사용자 입력값을 기준으로
-                    // 컨트롤러를 실행시켜 주세요
-                    sc.run();
+                    ac.doStar();
                     break;
                 }
             } catch (IllegalArgumentException e) {
                 System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요");
+            } catch (InvalidUserInput e) {
+                throw new RuntimeException(e);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
     }
+// TODO: 이걸 지워야 하나?
+//    public void validUserInput(String userInput) throws IllegalArgumentException {
+//        if (!userInput.equals("1") && !userInput.equals("2")) {
+//            throw new IllegalArgumentException("잘못 입력하셨습니다. 다시 입력해 주세요");
+//        }
+//    }
 }
 
 class Main {
