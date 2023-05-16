@@ -2,9 +2,6 @@ package view;
 import java.util.Scanner;
 
 public class StarMakerView {
-    public void starMarkerViewTest(){
-        System.out.println("StarMakerView.starMarkerViewTest");
-    }
 	private Scanner scanner = new Scanner(System.in);
 	public void starMenu() {
 		System.out.println("별찍기 서비스입니다");

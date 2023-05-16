@@ -1,13 +1,12 @@
 package model;
 
-public class StarMaker {
-    // StarMaker Model
+public class StarMakerModel {
 	private int starNum1;
 	private int starNum2;
 
 	public StarMakerModel(){}
 
-	public void StarMaker1() {
+	public void StarMaker() {
 		switch (starNum1) {
 			case 1:
 				rightTriangle(starNum2);
@@ -103,7 +102,6 @@ public class StarMaker {
 		}
 	}
 	public static void Star(int n) {
-		System.out.println(n*2+"줄의 별을 출력합니다");
 		int i;
 		int j;
 		for (i = 0; i < n; i += 2) {
