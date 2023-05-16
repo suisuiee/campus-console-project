@@ -25,7 +25,7 @@ public class mainService {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input;
 		while(true) {
-			System.out.println("구구단 계산기 입니다 구구단은 g 계산기는 c 종료는q입니다 ");
+			System.out.println("구구단 계산기 입니다 구구단은 g 계산기는 c 별찍기는 s 종료는q입니다 ");
 			input = br.readLine();
 			if(input.equals("q")) {
 				break;
@@ -51,8 +51,10 @@ public class mainService {
 		System.out.println("별찍기 서비스로 이동합니다...");
 				StarMakerModel starmodel = new StarMakerModel();
 				StarMakerView starview = new StarMakerView();
-				StarMakerController starcontroller = new StarMakerController();
+				StarMakerController starcontroller = new StarMakerController(starmodel, starview);
 				starview.starMenu();
+				starcontroller.StarMakerControl();
+				break;
 			}
 			else {
 				System.out.println("잘못된 입력입니다");				

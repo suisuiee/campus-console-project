@@ -4,30 +4,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import exception.StarshapevalueException;
+import model.StarMakerModel;
 import view.StarMakerView;
+
 public class StarMakerController {
-	
-
-public void StarMakerStart() throws IOException, NumberFormatException, StarshapevalueException{
-	try(BufferedReader starnum = new BufferedReader(new InputStreamReader(System.in))){
-		String num = starnum.readLine();
-		if(isInteger(num)) {
-			StarMakerView view = new StarMakerView();
-			view.viewStarMaker();
-		}
+	private StarMakerModel model;
+	private StarMakerView view;
+	public StarMakerController(StarMakerModel model, StarMakerView view) {
+		this.model =model;
+		this.view = view;
 	}
-			
-}
-
-private boolean isInteger(String num) throws StarshapevalueException {
-    try {
-        int n = Integer.parseInt(num);
-        if (n > 6 || n < 1)
-            throw new StarshapevalueException();
-    } catch (NumberFormatException e) {
-        System.out.println("숫자를 입력해주세요");
-        return false;
-    }
-	return true;
-}
+	public void StarMakerControl() {
+		int starNum1 = view.getInputNumber();
+		int starNum2 = view.getInputNumber();
+		model.setStarNum1(starNum1);
+		model.setStarNum2(starNum2);
+		model.StarMaker();
+	}
 }
