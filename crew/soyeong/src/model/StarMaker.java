@@ -1,10 +1,9 @@
 package model;
 
-public class Gugudan {
-    // Gugudan Model
+public class StarMaker {
 	private int num;
 	
-	public Gugudan(int num) {
+	public StarMaker(int num) {
 		this.num = num;
 	}
 
