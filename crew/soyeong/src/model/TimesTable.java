@@ -1,10 +1,9 @@
 package model;
 
-public class Gugudan {
-    // Gugudan Model
+public class TimesTable {
 	private int num;
 	
-	public Gugudan(int num) {
+	public TimesTable(int num) {
 		this.num = num;
 	}
 

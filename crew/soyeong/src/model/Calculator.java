@@ -1,72 +1,37 @@
 package model;
 
 public class Calculator {
-    private int num1;
-    private int num2;
-    private char op;
 
-    public Calculator() {
+	private int op1, op2; // operand1, operand2
+	private String op; // operator
+	
+	public Calculator(int op1, String op, int op2) {
+		this.op1 = op1;
+		this.op = op;
+		this.op2 = op2;
+	}
 
-    }
-    public Calculator(int num1, int num2) {
-        this.num1 = num1;
-        this.num2 = num2;
-    }
+	public int getOp1() {
+		return op1;
+	}
 
-    public Calculator(int num1, int num2, char op) {
-        this.num1 = num1;
-        this.num2 = num2;
-        this.op = op;
-    }
+	public void setOp1(int op1) {
+		this.op1 = op1;
+	}
 
-    public int calculate(){
-        int result = 0;
-        //
-        switch (op){
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                result = num1 / num2;
-                break;
-            default:
-                throw new IllegalArgumentException();
-        }
-        return result;
-    }
+	public int getOp2() {
+		return op2;
+	}
 
-    public int getNum1() {
-        return num1;
-    }
+	public void setOp2(int op2) {
+		this.op2 = op2;
+	}
 
-    public void setNum1(int num1) {
-        this.num1 = num1;
-    }
+	public String getOp() {
+		return op;
+	}
 
-    public int getNum2() {
-        return num2;
-    }
-
-    public void setNum2(int num2) {
-        this.num2 = num2;
-    }
-
-    public char getOp() {
-        return op;
-    }
-
-    public void setOp(char op) throws IllegalArgumentException {
-        if(op == '+' || op == '-' || op == '*' || op == '/'){
-            this.op = op;
-            return;
-        }
-        throw new IllegalArgumentException("선택자를 잘못 입력하셨습니다. " + op);
-    }
-
+	public void setOp(String op) {
+		this.op = op;
+	}
 }
