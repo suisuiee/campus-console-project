@@ -5,7 +5,7 @@ public class StarMaker {
 	private int starNum1;
 	private int starNum2;
 
-	public StarMakerModel(){}
+	public StarMaker(){}
 
 	public void StarMaker1() {
 		switch (starNum1) {
