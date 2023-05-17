@@ -5,10 +5,10 @@ import view.StarMakerView;
 
 public class StarMakerController {
     // StarMakerController
-	private StarMakerModel model;
+	private StarMaker model;
 	private StarMakerView view;
 	public StarMakerController(StarMakerModel model, StarMakerView view) {
-		this.model =model;
+		this.model = model;
 		this.view = view;
 	}
     public void run() {
