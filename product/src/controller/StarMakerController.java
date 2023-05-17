@@ -7,7 +7,7 @@ public class StarMakerController {
     // StarMakerController
 	private StarMaker model;
 	private StarMakerView view;
-	public StarMakerController(StarMakerModel model, StarMakerView view) {
+	public StarMakerController(StarMaker model, StarMakerView view) {
 		this.model = model;
 		this.view = view;
 	}
